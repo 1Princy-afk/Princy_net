@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Princy Caliardo Net - Loja Virtual</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .vodafone-bar {
+            background-color: #e60000; /* Vermelho da Vodafone */
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #444;
+            overflow: hidden;
+        }
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+        .container {
+            width: 90%;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .content div {
+            flex: 1 1 30%;
+            background-color: #eaeaea;
+            margin: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+        h2 {
+            text-align: center;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+        .product-list h3 {
+            color: #333;
+            font-size: 20px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .product-list ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .product-list ul li {
+            background-color: #fff;
+            padding: 15px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            border-radius: 5px;
+        }
+        .product-list ul li:hover {
+            background-color: #ddd;
+        }
+        .description {
+            font-size: 14px;
+            color: #666;
+            margin-top: 5px;
+            text-align: left;
+        }
+        a {
+            color: #337ab7;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .about-modal {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        .about-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 500px;
+            text-align: center;
+        }
+        .close-button {
+            background-color: #e60000;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        function redirectToWhatsApp(packageDescription) {
+            const phoneNumber = '+258840776549'; // Número para WhatsApp
+            const message = `Olá, gostaria de adquirir o seguinte pacote: ${packageDescription}. O número de celular para o pagamento é 840776549.`; 
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        function showAbout() {
+            document.getElementById('about-modal').style.display = 'flex';
+        }
+
+        function closeAbout() {
+            document.getElementById('about-modal').style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+
+    <div class="vodafone-bar">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Vodafone_Logo.svg/1024px-Vodafone_Logo.svg.png" alt="Vodafone Logo" height="40"> 
+        <!-- URL do logotipo da Vodafone, pode ser alterada conforme necessário -->
+    </div>
+
+    <header>
+        <h1>Princy Caliardo Net - Loja Virtual</h1>
+        <p>Pacotes de Internet da Vodacom</p>
+    </header>
+
+    <nav>
+        <a href="#" onclick="showAbout()">Sobre Nós</a>
+        <a href="#">Pacotes</a>
+        <a href="https://Wa.me//+258840776549" target="_blank">Contato</a>
+    </nav>
+
+    <div class="container">
+        <h2>Pacotes de Internet</h2>
+        <div class="content">
+            <div class="product-list">
+                <h3>Internet Diário (24h)</h3>
+                <ul>
+                    <li onclick="redirectToWhatsApp('20mt - 1GB - Diário')">20mt - 1GB
+                        <div class="description">Acesso a internet por 24 horas. Ideal para uso esporádico.</div>
+                    </li>
+                    <li onclick="redirectToWhatsApp('40mt - 2GB - Diário')">40mt - 2GB
+                        <div class="description">Perfeito para quem precisa de um pouco mais de dados durante o dia.</div>
+                    </li>
+                    <li onclick="redirectToWhatsApp('60mt - 3GB - Diário')">60mt - 3GB
+                        <div class="description">Ótimo para quem utiliza a internet para navegação e redes sociais.</div>
+                    </li>
+                    <li onclick="redirectToWhatsApp('80mt - 4GB - Diário')">80mt - 4GB
+                        <div class="description">Para um dia inteiro de internet sem preocupações.</div>
+                    </li>
+                    <li onclick="redirectToWhatsApp('100mt - 5GB - Diário')">100mt - 5GB
+                        <div class="description">Suficiente para quem gosta de assistir vídeos e ouvir música online.</div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="product-list">
+                <h3>Internet Semanal (7 dias)</h3>
+                <ul>
+                    <li onclick="redirectToWhatsApp('25mt - 1GB - Semanal')">25mt - 1GB
+                        <div class="description">Um pacote acessível para navegar durante a semana.</div>
+                    </li>
+                    <li onclick="redirectToWhatsApp('50mt - 2GB - Semanal')">50mt - 2GB
+                        <div class="description">Ideal para uso moderado ao longo da semana.</div>
+                    </li>
+                    <li onclick="redirectToWhatsApp('75mt - 3GB - Semanal')">75mt - 3GB
+                        <div class="description">Suficiente para compartilhar e navegar à vontade.</div>
+                    </li>
+                    <li onclick="redirectToWhatsApp('100mt - 4GB - Semanal')">100mt - 4GB
+                        <div class="description">Perfeito para quem não quer ficar sem internet durante 7 dias.</div>
+                    </li>
+                    <li onclick="redirectToWhatsApp('125mt - 5GB - Semanal')">125mt - 5GB
+                        <div class="description">Para quem precisa de dados extras ao longo da semana.</div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="product-list">
+                <h3>Internet Mensal (30 dias)</h3>
+                <ul>
+                    <li onclick="redirectToWhatsApp('190mt - 5GB - Mensal')">5GB - 190mt
+                        <div class="description">Pacote econômico para quem utiliza internet de forma básica.</div>
+                    </li>
+                    <li onclick="redirectToWhatsApp('250mt - 8GB - Mensal')">8GB - 250mt
+                        <div class="description">Perfeito para quem navega e utiliza redes sociais regularmente.</div>
+                    </li>
+                    <li onclick="redirectToWhatsApp('280mt - 10GB - Mensal')">10GB - 280mt
+                        <div class="description">Ideal para usuários que assistem a vídeos e jogam online.</div>
+                    </li>
+                    <li onclick="redirectToWhatsApp('420mt - 20GB - Mensal')">20GB - 420mt
+                        <div class="description">Pacote completo para quem não quer se preocupar com dados.</div>
+                    </li>
+                    <li onclick="redirectToWhatsApp('900mt - 50GB - Mensal')">50GB - 900mt
+                        <div class="description">Suficiente para uma experiência completa de internet.</div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="product-list">
+                <h3>Pacotes Diamante Vodacom</h3>
+                <ul>
+                    <li onclick="redirectToWhatsApp('440MT - Chamadas e SMS ilimitadas + 8GB')">440MT - Chamadas e SMS ilimitadas + 8GB
+                        <div class="description">Pacote ideal para quem deseja se manter conectado e falar à vontade.</div>
+                    </li>
+                    <li onclick="redirectToWhatsApp('550MT - Chamadas e SMS ilimitadas + 12GB')">550MT - Chamadas e SMS ilimitadas + 12GB
+                        <div class="description">Aproveite ao máximo a internet e suas ligações, perfeito para usuários ativos.</div>
+                    </li>
+                    <li onclick="redirectToWhatsApp('750MT - Chamadas e SMS ilimitadas + 20GB')">750MT - Chamadas e SMS ilimitadas + 20GB
+                        <div class="description">Pacote premium para quem não quer se preocupar com limites, ideal para tudo que você precisa.</div>
+                    </li>
+                    <li onclick="redirectToWhatsApp('1100MT - Chamadas e SMS ilimitadas + 35GB')">1100MT - Chamadas e SMS ilimitadas + 35GB
+                        <div class="description">Perfeito para quem faz muitas chamadas e usa bastante internet.</div>
+                    </li>
+                    <li onclick="redirectToWhatsApp('1550MT - Chamadas e SMS ilimitadas + 50GB')">1550MT - Chamadas e SMS ilimitadas + 50GB
+                        <div class="description">Para quem não quer limites nas chamadas e precisa de muitos dados.</div>
+                    </li>
+                    <li onclick="redirectToWhatsApp('2100MT - Chamadas e SMS ilimitadas + 100GB')">2100MT - Chamadas e SMS ilimitadas + 100GB
+                        <div class="description">O pacote máximo para quem precisa de tudo, sem se preocupar com limites.</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="about-modal" class="about-modal">
+        <div class="about-content">
+            <h2>Sobre Nós</h2>
+            <p>Meu nome é Princy Caliardo e vim facilitar o mundo da venda de internet para os jovens, fazendo a junção de tecnologia e algo tão simples (obtenção de internet).</p>
+            <p>Venha para o serviço mais confiável e rápido de Moçambique.</p>
+            <button class="close-button" onclick="closeAbout()">Fechar</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Princy Caliardo Net - Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
